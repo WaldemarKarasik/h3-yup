@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/WaldemarKarasik/h3-yup"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "./dist/h3-yup.umd.cjs",
   "module": "./dist/h3-yup.js",
