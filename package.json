@@ -7,16 +7,20 @@
     "type": "git",
     "url": "https://github.com/WaldemarKarasik/h3-yup"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/h3-yup.umd.cjs",
   "module": "./dist/h3-yup.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/h3-yup.js"
+      "import": "./dist/h3-yup.js",
+      "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
