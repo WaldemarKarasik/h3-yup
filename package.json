@@ -1,5 +1,12 @@
 {
   "name": "h3-yup",
+  "description": "Validate h3 and Nuxt requests with yup.",
+  "author": "waldemarkarasik",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WaldemarKarasik/h3-yup"
+  },
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/h3-yup.umd.cjs",
