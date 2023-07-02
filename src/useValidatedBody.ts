@@ -1,5 +1,5 @@
 import type { H3Event } from "h3";
-import { H3Error, readBody, sendError } from "h3";
+import { readBody } from "h3";
 import { ObjectSchema } from "yup";
 import sendH3Error from "./sendH3Error";
 
@@ -12,7 +12,7 @@ export default async function useValidateBody<T extends object>(
 ) {
   try {
     const body = await readBody(event);
-    const validated = await schema.validate(body);
+    await schema.validate(body);
     return body;
   } catch (error: any) {
     sendH3Error(
