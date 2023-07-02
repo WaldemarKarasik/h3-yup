@@ -12,7 +12,7 @@ export default async function useValidateBody<T extends object>(
   try {
     const body = await readBody(event);
     const validated = await schema.validate(body);
-    return validated;
+    return body;
   } catch (error: any) {
     const err = new H3Error();
     err.statusCode = DEFAULT_ERROR_STATUS;
