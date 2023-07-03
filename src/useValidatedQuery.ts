@@ -1,19 +1,18 @@
-import type { H3Event } from "h3";
-import { readBody } from "h3";
+import { H3Event, getQuery } from "h3";
 import { ObjectSchema } from "yup";
-import sendH3Error from "./sendH3Error";
+import { sendH3Error } from ".";
 
 const DEFAULT_ERROR_MESSAGE = "Bad Request";
 const DEFAULT_ERROR_STATUS = 400;
 
-export default async function useValidatedBody<T extends object>(
+export default async function useValidatedQuery<T extends object>(
   schema: ObjectSchema<T>,
   event: H3Event
 ) {
   try {
-    const body = await readBody(event);
-    await schema.validate(body);
-    return body;
+    const query = await getQuery(event);
+    await schema.validate(query);
+    return query;
   } catch (error: any) {
     sendH3Error(
       DEFAULT_ERROR_STATUS,
